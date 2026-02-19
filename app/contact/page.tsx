@@ -4,8 +4,10 @@ import Header from '@/components/Header';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-// Initialiser EmailJS avec ta clé publique
-emailjs.init('FRDUxnslbUM9gqQd_');
+// Initialiser EmailJS avec la clé publique depuis les variables d'environnement
+if (typeof window !== 'undefined') {
+  emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -29,8 +31,8 @@ export default function Contact() {
     try {
       // Envoyer l'email via EmailJS
       await emailjs.send(
-        'service_rmvel0k',
-        'template_51khqqr', // À remplacer avec le vrai Template ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
         {
           from_name: formData.name,
           from_email: formData.email,
