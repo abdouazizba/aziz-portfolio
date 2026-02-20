@@ -2,29 +2,29 @@ import Header from '@/components/Header';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white flex flex-col">
+    <main className="min-h-screen relative flex flex-col">
       <Header />
 
-      {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center py-20 px-4">
+        {/* Hero Section */}
+        <section className="flex-1 flex items-center justify-center py-20 px-4 pt-40">
         <div className="container max-w-2xl text-center">
           {/* Avatar */}
           <div className="mb-8">
-            <div className="inline-flex w-32 h-32 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 items-center justify-center text-white text-6xl font-bold">
+            <div className="inline-flex w-32 h-32 rounded-full bg-black/40 backdrop-blur-3xl border border-white/30 items-center justify-center text-white text-6xl font-bold shadow-2xl shadow-black/50">
               AA
             </div>
           </div>
 
           {/* Nom et titre */}
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Abdou Aziz Ba
           </h2>
-          <p className="text-xl text-blue-600 font-semibold mb-6">
+          <p className="text-xl text-white font-semibold mb-6">
             Fullstack Developer
           </p>
 
           {/* Bio */}
-          <p className="text-lg text-gray-600 mb-12 leading-relaxed">
+          <p className="text-lg text-gray-300 mb-12 leading-relaxed">
             Développeur fullstack animé par l'envie de construire des applications utiles, 
             scalables et bien pensées. J'allie créativité, rigueur et sens du détail pour 
             donner vie à des projets qui comptent.
@@ -36,7 +36,7 @@ export default function Home() {
               href="https://github.com/abdouazizba" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-gray-700 hover:bg-blue-600 hover:text-white transition"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black/40 backdrop-blur-3xl text-white hover:bg-black/50 transition border border-white/30 shadow-lg shadow-black/50"
               title="GitHub"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ export default function Home() {
               href="https://linkedin.com/in/abdouazizba" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-gray-700 hover:bg-blue-600 hover:text-white transition"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black/40 backdrop-blur-3xl text-white hover:bg-black/50 transition border border-white/30 shadow-lg shadow-black/50"
               title="LinkedIn"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -55,8 +55,8 @@ export default function Home() {
               </svg>
             </a>
             <a 
-              href="mailto:abdouazizba.dev@gmail.com"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-gray-700 hover:bg-blue-600 hover:text-white transition"
+              href="mailto:mameabdoudabakh2002@gmail.com"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black/40 backdrop-blur-3xl text-white hover:bg-black/50 transition border border-white/30 shadow-lg shadow-black/50"
               title="Email"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -64,10 +64,10 @@ export default function Home() {
               </svg>
             </a>
             <a 
-              href="https://instagram.com" 
+              href="https://instagram.com/_aziz_ba_/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-gray-700 hover:bg-blue-600 hover:text-white transition"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black/40 backdrop-blur-3xl text-white hover:bg-black/50 transition border border-white/30 shadow-lg shadow-black/50"
               title="Instagram"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -93,13 +93,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="w-full py-8 px-4 border-t border-gray-100 bg-gray-50">
-        <div className="container text-center text-gray-600 text-sm">
-          <p>© 2026 Abdou Aziz Ba. Tous droits réservés.</p>
-        </div>
-      </footer>
     </main>
   );
 }

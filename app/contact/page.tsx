@@ -56,13 +56,13 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-transparent">
       <Header />
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 pt-40">
         <div className="container max-w-2xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Me contacter</h1>
-          <p className="text-xl text-gray-600 mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Me contacter</h1>
+          <p className="text-xl text-gray-300 mb-12">
             Vous avez une question ou une proposition ? N'hésitez pas à me contacter !
           </p>
 
@@ -70,29 +70,29 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                <p className="text-gray-600">
-                  <a href="mailto:abdouazizba.dev@gmail.com" className="text-blue-600 hover:underline">
-                    mameabdoudabakh2002@gmail.com
+                <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
+                <p className="text-gray-300">
+                  <a href="mailto:mameabdouaziz.02@gmail.com" className="text-white hover:text-gray-300 transition">
+                    mameabdouaziz.02@gmail.com
                   </a>
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Téléphone</h3>
-                <p className="text-gray-600">
-                  <a href="tel:+33744553334" className="text-blue-600 hover:underline">
+                <h3 className="text-lg font-semibold text-white mb-2">Téléphone</h3>
+                <p className="text-gray-300">
+                  <a href="tel:+33744553334" className="text-white hover:text-gray-300 transition">
                     +33 7 44 55 33 34
                   </a>
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Réseaux sociaux</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">Réseaux sociaux</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://github.com/abdouazizba"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600 transition"
+                    className="text-white bg-black/40 backdrop-blur-3xl border border-white/30 hover:bg-black/50 transition rounded-full p-3 shadow-lg shadow-black/50"
                     title="GitHub"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -103,7 +103,7 @@ export default function Contact() {
                     href="https://linkedin.com/in/abdouazizba"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600 transition"
+                    className="text-white bg-black/40 backdrop-blur-3xl border border-white/30 hover:bg-black/50 transition rounded-full p-3 shadow-lg shadow-black/50"
                     title="LinkedIn"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -117,16 +117,16 @@ export default function Contact() {
             {/* Form */}
             <div>
               {submitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                  <h3 className="text-xl font-semibold text-green-700 mb-2">Message envoyé !</h3>
-                  <p className="text-green-600">
+                <div className="bg-green-900/30 border border-green-600/50 rounded-lg p-6 text-center">
+                  <h3 className="text-xl font-semibold text-green-400 mb-2">Message envoyé !</h3>
+                  <p className="text-green-300">
                     Merci pour votre message. Je vous répondrai dès que possible.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
                       Nom
                     </label>
                     <input
@@ -136,12 +136,12 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full"
                       placeholder="Votre nom"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                       Email
                     </label>
                     <input
@@ -151,12 +151,12 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full"
                       placeholder="votre.email@example.com"
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
                       Sujet
                     </label>
                     <input
@@ -166,12 +166,12 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full"
                       placeholder="Sujet du message"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
                       Message
                     </label>
                     <textarea
@@ -181,13 +181,13 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full"
                       placeholder="Votre message..."
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+                    className="btn-primary w-full"
                   >
                     Envoyer le message
                   </button>

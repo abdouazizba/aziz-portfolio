@@ -1,56 +1,135 @@
+'use client';
+
 import Header from '@/components/Header';
+import { useEffect, useRef } from 'react';
 
 export default function About() {
+  const formationRef = useRef(null);
+  const experienceRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px',
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
+          // Délai d'animation pour chaque enfant
+          const children = entry.target.querySelectorAll('.animate-item');
+          children.forEach((child, index) => {
+            (child as HTMLElement).style.setProperty('--delay', `${index * 0.1}s`);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    if (formationRef.current) observer.observe(formationRef.current);
+    if (experienceRef.current) observer.observe(experienceRef.current);
+
+    return () => {
+      if (formationRef.current) observer.unobserve(formationRef.current);
+      if (experienceRef.current) observer.unobserve(experienceRef.current);
+    };
+  }, []);
+
   return (
-    <main className="min-h-screen bg-white flex flex-col">
+    <main className="min-h-screen relative">
       <Header />
 
-      <section className="flex-1 py-20 px-4">
-        <div className="container max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">À propos</h1>
-
-          <div className="space-y-6 text-gray-700 leading-relaxed">
-            <p className="text-lg">
-              Bonjour, je suis Abdou Aziz Ba, un développeur fullstack passionné par la création 
-              de solutions numériques innovantes et performantes.
-            </p>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Mon parcours</h2>
-            <p>
-              Depuis mes débuts en développement, j'ai eu l'opportunité de travailler sur diverses 
-              technologies et projets. Mon expérience couvre le développement frontend moderne avec 
-              React, la création d'APIs robustes avec Node.js, et le déploiement d'applications 
-              scalables sur le cloud.
-            </p>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Ma philosophie</h2>
-            <p>
-              J'allie créativité, rigueur technique et sens du détail pour construire des applications 
-              qui non seulement fonctionnent bien, mais qui apportent une véritable valeur. Chaque 
-              projet est une opportunité d'apprendre et de créer quelque chose de significatif.
-            </p>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">En dehors du code</h2>
-            <p>
-              Quand je ne code pas, je suis impliqué dans la communauté tech, je contribue à des 
-              projets open-source, et je partage mes connaissances avec d'autres développeurs. 
-              J'aime aussi explorer les nouvelles technologies et tendances du web.
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-10 pt-40">
+        <div className="container max-w-4xl mx-auto">
+          {/* Hero Section */}
+          <div className="mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">À propos de moi</h1>
+            <p className="text-xl text-gray-300">
+              Développeur logiciel passionné par les solutions innovantes et les technologies modernes.
             </p>
           </div>
 
-          <div className="mt-12">
+          {/* Intro */}
+          <div className="mb-16 bg-black/40 backdrop-blur-3xl border border-white/30 rounded-2xl p-8 hover:bg-black/50 transition-all duration-300 shadow-2xl shadow-black/50">
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Je suis <span className="text-white font-semibold">Abdou Aziz Ba</span>, alternant développeur logiciel motivé par la création de solutions performantes et évolutives. Passionné par l'architecture logicielle, le développement fullstack et l'innovation technologique, je m'investis dans des environnements collaboratifs où la qualité et la rigueur sont essentielles.
+            </p>
+          </div>
+
+          {/* Formation */}
+          <div className="mb-16 fade-in-up opacity-0" ref={formationRef}>
+            <h2 className="text-3xl font-bold text-white mb-8">Formation</h2>
+            <div className="space-y-4">
+              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50">
+                <h3 className="text-xl font-bold text-white mb-2">Master Expert en Architecture et Développement Logiciel</h3>
+                <p className="text-gray-400">EPITA Paris • 2025 - 2027</p>
+              </div>
+              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50">
+                <h3 className="text-xl font-bold text-white mb-2">Master Informatique</h3>
+                <p className="text-gray-400">EPITA Paris • 2020 - 2023</p>
+              </div>
+              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50">
+                <h3 className="text-xl font-bold text-white mb-2">Licence Professionnelle en Génie Logiciel, Réseaux et Systèmes</h3>
+                <p className="text-gray-400">EPITA • 2020 - 2023</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Expérience */}
+          <div className="mb-16 fade-in-up opacity-0" ref={experienceRef}>
+            <h2 className="text-3xl font-bold text-white mb-8">Expérience</h2>
+            <div className="space-y-4">
+              <div className="animate-item bg-gray-800/30 backdrop-blur-md border border-cyan-400/20 rounded-xl p-6 hover:border-cyan-400/40 transition-all duration-300">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold text-cyan-400">IT Support & Junior Developer</h3>
+                  <span className="text-sm text-gray-400">Septembre - Décembre 2024</span>
+                </div>
+                <p className="text-gray-300 mb-3">Jungeheinrich • Villepreux, France</p>
+                <ul className="text-gray-400 text-sm space-y-1 ml-4">
+                  <li>• Développement d'applications en C# et .NET</li>
+                  <li>• Support technique et maintenance de systèmes</li>
+                  <li>• Collaboration avec les équipes IT</li>
+                </ul>
+              </div>
+              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold text-white">IT Support & Junior Developer</h3>
+                  <span className="text-sm text-gray-400">Septembre 2023 - Juillet 2024</span>
+                </div>
+                <p className="text-gray-300 mb-3">Seoul Peche SARL</p>
+                <ul className="text-gray-400 text-sm space-y-1 ml-4">
+                  <li>• Configuration d'applications d'entreprise</li>
+                  <li>• Support technique utilisateurs</li>
+                  <li>• Participation à des projets agiles</li>
+                </ul>
+              </div>
+              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold text-white">Assistant Informatique</h3>
+                  <span className="text-sm text-gray-400">Juillet - Septembre 2022</span>
+                </div>
+                <p className="text-gray-300 mb-3">ONAS Sénégal • Dakar</p>
+                <ul className="text-gray-400 text-sm space-y-1 ml-4">
+                  <li>• Configuration et sécurisation des équipements réseau</li>
+                  <li>• Diagnostic rapide des incidents réseau</li>
+                  <li>• Support des utilisateurs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
             <a href="/contact" className="btn-primary">
-              Me contacter
+              Me Contacter
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </a>
           </div>
         </div>
       </section>
-
-      <footer className="w-full py-8 px-4 border-t border-gray-100 bg-gray-50">
-        <div className="container text-center text-gray-600 text-sm">
-          <p>© 2026 Abdou Aziz Ba. Tous droits réservés.</p>
-        </div>
-      </footer>
     </main>
   );
 }
