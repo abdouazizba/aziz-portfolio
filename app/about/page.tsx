@@ -1,6 +1,7 @@
 'use client';
 
 import Header from '@/components/Header';
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
 export default function About() {
@@ -61,17 +62,38 @@ export default function About() {
           <div className="mb-16 fade-in-up opacity-0" ref={formationRef}>
             <h2 className="text-3xl font-bold text-white mb-8">Formation</h2>
             <div className="space-y-4">
-              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50">
-                <h3 className="text-xl font-bold text-white mb-2">Master Expert en Architecture et Développement Logiciel</h3>
-                <p className="text-gray-400">EPITA Paris • 2025 - 2027</p>
+              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50 flex gap-6 items-start">
+                <div className="flex-shrink-0 w-24 h-24 bg-white/5 rounded-lg flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="https://img.logo.dev/ingetis.com?token=pk_JB2h024uR1OpkGxh2SYE8w&retina=true"
+                    alt="INGETIS"
+                    width={96}
+                    height={96}
+                    className="w-20 h-20 object-contain"
+                    unoptimized
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-2">Master Expert en Architecture et Développement Logiciel</h3>
+                  <p className="text-gray-400">INGETIS Paris • 2025 - 2027</p>
+                </div>
               </div>
-              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50">
-                <h3 className="text-xl font-bold text-white mb-2">Master Informatique</h3>
-                <p className="text-gray-400">EPITA Paris • 2020 - 2023</p>
-              </div>
-              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50">
-                <h3 className="text-xl font-bold text-white mb-2">Licence Professionnelle en Génie Logiciel, Réseaux et Systèmes</h3>
-                <p className="text-gray-400">EPITA • 2020 - 2023</p>
+              
+              <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50 flex gap-6 items-start">
+                <div className="flex-shrink-0 w-24 h-24 bg-white/5 rounded-lg flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="https://img.logo.dev/https://groupeism.sn?token=pk_JB2h024uR1OpkGxh2SYE8w&retina=true"
+                    alt="ISM Dakar"
+                    width={96}
+                    height={96}
+                    className="w-20 h-20 object-contain"
+                    unoptimized
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-2">Licence Professionnelle en Génie Logiciel, Réseaux et Systèmes</h3>
+                  <p className="text-gray-400">ISM Dakar • 2020 - 2023</p>
+                </div>
               </div>
             </div>
           </div>
@@ -82,13 +104,13 @@ export default function About() {
             <div className="space-y-4">
               <div className="animate-item bg-gray-800/30 backdrop-blur-md border border-cyan-400/20 rounded-xl p-6 hover:border-cyan-400/40 transition-all duration-300">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-cyan-400">IT Support & Junior Developer</h3>
-                  <span className="text-sm text-gray-400">Septembre - Décembre 2024</span>
+                  <h3 className="text-xl font-bold text-cyan-400">Software Developer</h3>
+                  <span className="text-sm text-gray-400">En Poste</span>
                 </div>
-                <p className="text-gray-300 mb-3">Jungeheinrich • Villepreux, France</p>
+                <p className="text-gray-300 mb-3">Jungheinrich SA • Vélizy-Villacoublay, France</p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
                   <li>• Développement d'applications en C# et .NET</li>
-                  <li>• Support technique et maintenance de systèmes</li>
+                  <li>• Développement de la Logistic Interface permettant la communication entre les AGV et le SAP des clients</li>
                   <li>• Collaboration avec les équipes IT</li>
                 </ul>
               </div>
@@ -97,7 +119,7 @@ export default function About() {
                   <h3 className="text-xl font-bold text-white">IT Support & Junior Developer</h3>
                   <span className="text-sm text-gray-400">Septembre 2023 - Juillet 2024</span>
                 </div>
-                <p className="text-gray-300 mb-3">Seoul Peche SARL</p>
+                <p className="text-gray-300 mb-3">Seoul Pêche SARL • Dakar, Sénégal</p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
                   <li>• Configuration d'applications d'entreprise</li>
                   <li>• Support technique utilisateurs</li>
