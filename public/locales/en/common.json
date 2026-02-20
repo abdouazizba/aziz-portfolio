@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Abdou Aziz Ba",
+    "subtitle": "Fullstack Developer",
+    "bio": "Fullstack developer driven by the desire to build useful, scalable and well-thought-out applications. I combine creativity, rigor and attention to detail to bring meaningful projects to life.",
+    "myProjects": "View my projects",
+    "contactMe": "Contact me"
+  },
+  "about": {
+    "title": "About me",
+    "description": "Software developer passionate about innovative solutions and modern technologies.",
+    "intro": "I am Abdou Aziz Ba, a motivated software developer intern driven by creating performant and scalable solutions. Passionate about software architecture, fullstack development and technological innovation, I invest myself in collaborative environments where quality and rigor are essential.",
+    "education": "Education",
+    "experience": "Experience",
+    "contactButton": "Contact me"
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "Discover the projects I worked on",
+    "code": "Code",
+    "demo": "Demo",
+    "list": {
+      "project1": {
+        "title": "Personal Portfolio",
+        "desc": "A modern portfolio built with Next.js, focusing on design, performance and user experience. EmailJS integration, deployment on Vercel with CI/CD pipeline."
+      },
+      "project2": {
+        "title": "Task Management App",
+        "desc": "Collaborative application for managing tasks with real-time notification system. Intuitive and responsive interface with Firebase synchronization."
+      },
+      "project3": {
+        "title": "E-commerce Platform",
+        "desc": "Complete e-commerce platform with shopping cart, integrated payment system (Stripe) and admin dashboard for product management."
+      },
+      "project4": {
+        "title": "RESTful API with Documentation",
+        "desc": "Robust and scalable API with JWT authentication, data validation, professional error handling and complete Swagger documentation."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "Technologies and tools that I master and use regularly",
+    "categories": {
+      "frontend": "Frontend & UI",
+      "backend": "Backend & API",
+      "database": "Database & Data",
+      "tools": "Tools & Testing"
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "description": "Have a question or a proposal? Feel free to contact me!",
+    "email": "Email",
+    "phone": "Phone",
+    "social": "Social media",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Message subject",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send message"
+    },
+    "success": "Message sent!",
+    "successMessage": "Thank you for your message. I will get back to you as soon as possible."
+  },
+  "footer": {
+    "copyright": "© 2026 Abdou Aziz Ba. All rights reserved."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Travaux",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Abdou Aziz Ba",
+    "subtitle": "Fullstack Developer",
+    "bio": "Développeur fullstack animé par l'envie de construire des applications utiles, scalables et bien pensées. J'allie créativité, rigueur et sens du détail pour donner vie à des projets qui comptent.",
+    "myProjects": "Voir mes projets",
+    "contactMe": "Me contacter"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Développeur logiciel passionné par les solutions innovantes et les technologies modernes.",
+    "intro": "Je suis Abdou Aziz Ba, alternant développeur logiciel motivé par la création de solutions performantes et évolutives. Passionné par l'architecture logicielle, le développement fullstack et l'innovation technologique, je m'investis dans des environnements collaboratifs où la qualité et la rigueur sont essentielles.",
+    "education": "Formation",
+    "experience": "Expérience",
+    "contactButton": "Me Contacter"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "description": "Découvrez les projets sur lesquels j'ai travaillé",
+    "code": "Code",
+    "demo": "Démo",
+    "list": {
+      "project1": {
+        "title": "Portfolio Personnel",
+        "desc": "Un portfolio moderne construit avec Next.js, mettant l'accent sur le design, les performances et l'expérience utilisateur. Intégration EmailJS, déploiement sur Vercel avec pipeline CI/CD."
+      },
+      "project2": {
+        "title": "Application de Gestion de Tâches",
+        "desc": "Application collaborative pour gérer les tâches avec système de notification en temps réel. Interface intuitive et responsive avec synchronisation Firebase."
+      },
+      "project3": {
+        "title": "Plateforme E-commerce",
+        "desc": "Plateforme e-commerce complète avec panier d'achat, système de paiement intégré (Stripe) et tableau de bord administrateur pour la gestion des produits."
+      },
+      "project4": {
+        "title": "API RESTful avec Documentation",
+        "desc": "API robuste et scalable avec authentification JWT, validation de données, gestion des erreurs professionnelle et documentation Swagger complète."
+      }
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "description": "Technologies et outils que je maîtrise et utilise régulièrement",
+    "categories": {
+      "frontend": "Frontend & UI",
+      "backend": "Backend & API",
+      "database": "Base de données",
+      "tools": "Outils & Tests"
+    }
+  },
+  "contact": {
+    "title": "Me contacter",
+    "description": "Vous avez une question ou une proposition ? N'hésitez pas à me contacter !",
+    "email": "Email",
+    "phone": "Téléphone",
+    "social": "Réseaux sociaux",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre.email@example.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Sujet du message",
+      "message": "Message",
+      "messagePlaceholder": "Votre message...",
+      "submit": "Envoyer le message"
+    },
+    "success": "Message envoyé !",
+    "successMessage": "Merci pour votre message. Je vous répondrai dès que possible."
+  },
+  "footer": {
+    "copyright": "© 2026 Abdou Aziz Ba. Tous droits réservés."
+  }
+}

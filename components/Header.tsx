@@ -1,17 +1,25 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
+  const { t, ready } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navLinks = [
-    { href: '/', label: 'Accueil' },
-    { href: '/about', label: 'À propos' },
-    { href: '/projects', label: 'Travaux' },
-    { href: '/skills', label: 'Compétences' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: mounted ? t('nav.home') : 'Accueil' },
+    { href: '/about', label: mounted ? t('nav.about') : 'À propos' },
+    { href: '/projects', label: mounted ? t('nav.projects') : 'Travaux' },
+    { href: '/skills', label: mounted ? t('nav.skills') : 'Compétences' },
+    { href: '/contact', label: mounted ? t('nav.contact') : 'Contact' },
   ];
 
   return (
@@ -58,6 +66,11 @@ export default function Header() {
           <span className={`w-5 h-0.5 bg-white transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
           <span className={`w-5 h-0.5 bg-white transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
+
+        {/* Language Switcher */}
+        <div className="hidden md:block ml-2">
+          <LanguageSwitcher />
+        </div>
       </div>
 
       {/* Mobile Navigation Dropdown */}

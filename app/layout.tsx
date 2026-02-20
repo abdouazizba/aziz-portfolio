@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
+import { I18nProvider } from '@/components/I18nProvider';
 import './globals.css';
 import { JetBrains_Mono } from 'next/font/google';
 
@@ -32,11 +33,13 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={`${jetbrainsMono.className} bg-black relative`}>
-        {/* Content */}
-        <div className="relative z-10 min-h-screen flex flex-col">
-          {children}
-          <Footer />
-        </div>
+        <I18nProvider>
+          {/* Content */}
+          <div className="relative z-10 min-h-screen flex flex-col">
+            {children}
+            <Footer />
+          </div>
+        </I18nProvider>
       </body>
     </html>
   );
