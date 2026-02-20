@@ -82,7 +82,7 @@ export default function About() {
               <div className="animate-item bg-black/40 backdrop-blur-3xl border border-white/30 rounded-xl p-6 hover:bg-black/50 transition-all duration-300 shadow-lg shadow-black/50 flex gap-6 items-start">
                 <div className="flex-shrink-0 w-24 h-24 bg-white/5 rounded-lg flex items-center justify-center overflow-hidden">
                   <Image
-                    src="https://img.logo.dev/https://groupeism.sn?token=pk_JB2h024uR1OpkGxh2SYE8w&retina=true"
+                    src="https://img.logo.dev/groupeism.sn?token=pk_JB2h024uR1OpkGxh2SYE8w&retina=true"
                     alt="ISM Dakar"
                     width={96}
                     height={96}
